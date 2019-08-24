@@ -18,11 +18,22 @@ function App() {
   // Don't forget to pass the functions (and any additional data needed) to the components as props
   const [displayState, setDisplayState] = useState("");
 
-  const displayChange = e => {
-    if (e.target.textContent === 'C') {
-      setDisplayState("");
+  const addNumber = num => {
+    setDisplayState(displayState => displayState + num);
+    
+  }
+
+  const addOperator = operator => {
+    if (operator === "="){
+      setDisplayState(displayState => eval(displayState));
     } else {
-    setDisplayState(displayState + e.target.textContent);
+    setDisplayState(displayState => `${displayState} ${operator} `);
+    }
+  }
+
+  const addSpecials = specials => {
+    if (specials === "C") {
+      setDisplayState("");
     }
   }
   return (
@@ -32,11 +43,11 @@ function App() {
         {/* STEP 4 - Render your components here and be sure to properly import/export all files */}
         <Display val={displayState}/>
         <div className="specials-number">
-          <Specials specialsChange={displayChange}/>
-          <Numbers numberChange={displayChange}/>
+          <Specials specialsChange={addSpecials}/>
+          <Numbers numberChange={addNumber}/>
           </div>
           <div className="operatorDiv">
-            <Operator operatorsChange={displayChange}/>
+            <Operator operatorsChange={addOperator}/>
           </div>
           
       </div>
