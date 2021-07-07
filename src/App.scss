@@ -1,0 +1,83 @@
+
+
+
+.container {
+    background: red;
+    width: 540px;
+    margin: 0 auto;
+    .App{
+        display: flex;
+        flex-flow: row wrap;
+
+        .display {
+            width: 50%;
+            background: gray;
+            font-size: 30px;
+            margin: 0 auto;
+            text-align: right;
+            padding: 10px;
+            border-radius: 50px;
+            height: 50px;
+        }
+        
+        .specials-number {
+            display: flex;
+            flex-flow: column wrap;
+            width: 75%;
+            margin: 20px 0 20px 0;
+
+            .specials {
+                display: flex;
+                justify-content: space-evenly;
+                .specials-button {
+                    padding: 20px;
+                    border-radius: 50px;
+                    font-size: 30px;
+                    width: 30%;
+                    margin: 10px 0 10px 0;
+                    background:blue;
+                    color: white;
+                    border: 1px solid black;
+                }
+            }
+
+            .numbers {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-evenly;
+
+                .numbers-button {
+                    width: 30%;
+                    padding: 20px;
+                    border-radius: 50px;
+                    font-size: 30px;
+                    margin: 10px 0 10px 0;
+                    background: darkblue;
+                    color: white;
+                    border: 1px solid black;
+                }
+                :nth-child(10){
+                    width: 60%;
+                }
+            }
+        }
+
+        .operatorDiv {
+            width: 25%;
+            display: flex;
+            flex-flow: row wrap;
+            margin: 20px 0 20px 0;
+
+            .operators-button {
+                width: 90%;
+                padding: 20px;
+                border-radius: 50px;
+                font-size: 30px;
+                margin: 10px 0 10px 0;
+                background: lightblue;
+                border: 1px solid black;
+                color: white;
+            }
+        }
+    }
+}
